@@ -215,3 +215,17 @@ services:
     restart: on-failure
     networks:
       - tracemesh-net
+
+  # React dashboard, served by nginx; proxies /api to trace-producer.
+  frontend:
+    build:
+      context: ./frontend
+    container_name: tracemesh-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      trace-producer:
+        condition: service_started
+    networks:
+      - tracemesh-net
+    restart: unless-stopped
