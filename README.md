@@ -36,6 +36,8 @@ The producer and Spark job require Kafka and HDFS, not Hive, to serve live metri
 
 Open the dashboard at [http://localhost:8081](http://localhost:8081). Enable or disable the synthetic payment-service anomaly with the dashboard button. The dashboard only displays metrics actually processed by Spark; it does not generate fallback readings.
 
+A React dashboard is also served at [http://localhost:3000](http://localhost:3000) (see [React dashboard](#react-dashboard)).
+
 Check logs if the pipeline is still warming up:
 
 ```bash
